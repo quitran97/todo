@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "body": "Math",
+      "isSelected": true
+    },
+    {
+      "id": 1650965833177,
+      "body": "IT",
+      "isSelected": true
+    },
+    {
+      "id": 1651326492616,
+      "body": "Javascript",
+      "isSelected": false
+    }
+  ]
+}
