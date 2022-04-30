@@ -15,22 +15,21 @@ export type Todos = {
 
 export const TodoList = () => {
   const queryClient = useQueryClient();
-  // const todos : Todos | undefined = queryClient.getQueryData("todo")
   const { data: todos } = useQuery<unknown, Error, TodoProp>("todo", () =>
     queryClient.getQueryData("todo")
   );
 
   const handleFilter = useMemo(() => {
     const temp = todos;
-    if (temp.alterChange === "Active") {
+    if (temp?.alterChange === "Active") {
       return {
         ...temp,
-        data: temp.data.filter((todo) => todo.isSelected === true),
+        data: temp?.data?.filter((todo) => todo.isSelected === true),
       };
-    } else if (temp.alterChange === "Complete") {
+    } else if (temp?.alterChange === "Complete") {
       return {
         ...temp,
-        data: temp.data.filter((todo) => todo.isSelected === false),
+        data: temp?.data?.filter((todo) => todo.isSelected === false),
       };
     }
     return temp;

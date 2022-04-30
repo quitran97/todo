@@ -16,7 +16,6 @@ export type TodoProp = {
 
 const Home: NextPage = () => {
   const queryClient = useQueryClient()
-  // const { data } = useQuery("todos", () => initTodo);
   const { data } = useQuery<Promise<InitTodo[]>,Error,InitTodo[]>("todos", ()=> axios({
     method: 'get',
     url: 'http://localhost:3004/data',
